@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import React from "react";
 
 interface IReviewDetail {
@@ -6,10 +7,14 @@ interface IReviewDetail {
 
 const ReviewDetail = async ({params}: IReviewDetail) => {
 
-    const pid = (await params).productId
-    const rid = (await params).reviewId
+    const {productId} = (await params)
+    const {reviewId} = (await params)
 
-  return <div>ReviewDetail Product {pid} and with review count {rid}</div>;
+    if (parseInt(productId) > 100){
+      return notFound()
+    }
+
+  return <div>ReviewDetail Product {productId} and with review count {reviewId}</div>;
 };
 
 export default ReviewDetail;

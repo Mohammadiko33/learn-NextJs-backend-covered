@@ -25,14 +25,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.fullCenter , .rsc {
+.fullCenter , .fullcenter , .rsc {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.fullCCenter , .fullCenterCol , .csc {
+.fullCCenter , .fullccenter , .fullCenterCol , .fullcentercol , .csc {
   height: 100vh;
   display: flex;
   flex-direction: column;
