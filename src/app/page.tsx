@@ -1,9 +1,8 @@
-import HnadleSendReq from "@/Components/HandleSendReq";
 
 export default function Home() {
   return (
     <div className="fullCenter">
-      <HnadleSendReq/>
+    hello world
     </div>
   );
 }
