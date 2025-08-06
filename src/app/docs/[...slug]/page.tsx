@@ -10,7 +10,7 @@ const SubDocument = async ({ params }: ISubDocument) => {
   if (slug.length) {
     return (
       <div className="p-6 max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">زیرمستندها</h2>
+        <h2 className="text-2xl font-bold mb-4 text-white">sub docs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {slug.map((item: string) => (
             <div
