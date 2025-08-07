@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 export interface IlinkItem {
   title: string;
@@ -9,8 +10,17 @@ export interface IlinkItem {
 
 const Header = () => {
   const pathname = usePathname();
-  const productNum = Math.ceil(Math.random() * 100);
-  const commentNum = Math.ceil(Math.random() * 100);
+  const [productNum, setProductNum] = useState<number | null>(null);
+  const [commentNum, setCommentNum] = useState<number | null>(null);
+
+  useEffect(() => {
+    setProductNum(Math.ceil(Math.random() * 100));
+    setCommentNum(Math.ceil(Math.random() * 100));
+  }, []);
+
+  // Use fallback values until random numbers are set on the client
+  const productId = productNum ?? 1;
+  const commentId = commentNum ?? 1;
 
   const linkItem: IlinkItem[] = [
     { title: "dashboard", href: "/dashboard" },
@@ -21,9 +31,11 @@ const Header = () => {
     { title: "docs", href: "/docs/react-vs-vue" },
     { title: "handleSendReq", href: "/handleSendReq" },
     { title: "products", href: "/products" },
-    { title: "products detail", href: `/products/${productNum}` },
+    { title: "products detail", href: `/products/${productId}` },
     { title: "products detail comments", href: `/products` },
-    { title: "products detail comment id", href: `/products/${productNum}/comments/${commentNum}`},
+    { title: "products detail comment id", href: `/products/${productId}/comments/${commentId}` },
+    { title: "learn lang", href: "/articles/learn-new-lang" },
+    { title: "order", href: "/order" },
   ];
 
   return (
