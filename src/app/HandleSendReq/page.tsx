@@ -2,6 +2,8 @@
 
 import { IUserData } from "../api/users/[id]/route";
 
+export const defualtBtnClass = `px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80`;
+
 const HandleSendReq = () => {
   const BASE_URL = "http://localhost:3000/api/users";
   const BASE_Headers = { "Content-Type": "application/json" };
@@ -67,7 +69,6 @@ const HandleSendReq = () => {
     data.map((item: IUserData) => console.log(item));
   };
 
-  const defualtBtnClass = `px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80`;
 
   return (
     <div className="fullCenter">
