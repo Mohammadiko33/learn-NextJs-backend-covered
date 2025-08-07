@@ -5,8 +5,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Next.js - 18 - title Metadata", // http://localhost:3000/ = Next.js - 18 - title Metadata
-    template: "18 - %s", // an other page = 18 - page title
+    default: "Next.js - 19 - Link Component",
+    template: "18 - %s",
   },
   description: "Next.js v.15 Tutorial",
 };

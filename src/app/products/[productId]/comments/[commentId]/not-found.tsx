@@ -7,10 +7,10 @@ const ReviewNotFound = () => {
 
     const path = usePathname()
     const productId = path.split("/")[2]
-    const reviewId = path.split("/")[4]
+    const commentId = path.split("/")[4]
 
   return (
-    <div className="fullCenter">ReviewNotFound , no product with id {productId} in datas , and maybe sub route is wrong id: {reviewId} in db </div>
+    <div className="fullCenter">ReviewNotFound , no product with id {productId} in datas , and maybe sub route is wrong id: {commentId} in db </div>
   )
 }
 
