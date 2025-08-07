@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Next.js - 19 - Link Component",
+    default: "Next.js - 20 - Active Links",
     template: "18 - %s",
   },
   description: "Next.js v.15 Tutorial",

@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <div className="flex flex-wrap gap-4 justify-center px-4 py-5 bg-neutral-900 bg-opacity-80 rounded-xl shadow-lg animate-fade-in">
       {linkItem.map(({ title, href }) => {
-        const isActive = pathname === href;
+        const isActive = pathname === href && href !== "/";
 
         return (
           <Link
@@ -45,8 +45,6 @@ const Header = () => {
                 : "bg-neutral-800 text-gray-300 hover:scale-105"
               }
             `}
-            replace 
-            // if using ( replace ) in link element tag anytime you can't back to page
           >
             {title}
           </Link>
