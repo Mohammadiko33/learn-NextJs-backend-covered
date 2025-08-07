@@ -1,4 +1,6 @@
+"use client"
 import { IlinkItem } from '@/Components/Header';
+import { use } from 'react';
 import Link from 'next/link';
 
 interface NewArticle {
@@ -6,10 +8,10 @@ interface NewArticle {
     searchParams: Promise<{lang?: "en" | "ru" | "pr"}>
 }
 
-const NewArticle = async ({params,searchParams}: NewArticle) => {
+const NewArticle = ({params,searchParams}: NewArticle) => {
   
-  const {articleId} = await params
-  const {lang = "en" } = await searchParams
+  const {articleId} =  use(params)
+  const {lang = "en" } = use(searchParams)
   
   const linkItem : IlinkItem[] = [
       {title: "English" , href: `/articles/${articleId}?lang=en`},
