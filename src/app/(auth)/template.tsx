@@ -1,7 +1,7 @@
 "use client"
 import {useState} from 'react';
 
-const Layout = ({ // if you change route input value not changing
+const Template = ({ // if you change route input value not changing
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -16,4 +16,4 @@ const Layout = ({ // if you change route input value not changing
   );
 };
 
-export default Layout;
+export default Template;
