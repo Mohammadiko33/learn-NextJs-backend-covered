@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 interface IProductDetail { params: Promise<{productId: string}> }
 
@@ -15,7 +15,7 @@ const ProductDetail = async ({params}: IProductDetail) => {
   const {productId} = (await params)
   
   if (parseInt(productId) > 100){
-    return notFound()
+    return redirect("/")
   }
 
     return (

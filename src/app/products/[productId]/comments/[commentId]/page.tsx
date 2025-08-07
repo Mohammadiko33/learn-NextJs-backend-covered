@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import React from "react";
 
 interface IReviewDetail {
@@ -11,7 +11,7 @@ const ReviewDetail = async ({params}: IReviewDetail) => {
     const {commentId} = (await params)
 
     if (parseInt(commentId) > 100){
-      return notFound()
+      return redirect("/")
     }
 
   return <div className="fullcenter">ReviewDetail Product {productId} and with comment count {commentId}</div>;
