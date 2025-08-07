@@ -23,10 +23,7 @@ const Header = () => {
     { title: "products", href: "/products" },
     { title: "products detail", href: `/products/${productNum}` },
     { title: "products detail comments", href: `/products` },
-    {
-      title: "products detail comment id",
-      href: `/products/${productNum}/comments/${commentNum}`,
-    },
+    { title: "products detail comment id", href: `/products/${productNum}/comments/${commentNum}`},
   ];
 
   return (
