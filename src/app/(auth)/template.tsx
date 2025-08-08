@@ -10,7 +10,7 @@ const Template = ({ // if you change route input value not changing
   const [iptVal , setIptVal] = useState<string>("")
   
   return (
-    <div className='rsc'>this is ({children}) children 
+    <div className='csc'>this is ({children}) children 
     <input type="text" className='bg-gray-700 ml-3' value={iptVal} onChange={e => setIptVal(e.target.value)} />
     </div>
   );

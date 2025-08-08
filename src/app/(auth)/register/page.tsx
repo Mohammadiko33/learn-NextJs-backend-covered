@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-export const metadata: Metadata = { // 18 - register
+export const metadata: Metadata = {
   title: "register"
 }
 
