@@ -1,7 +1,7 @@
 "use client"
 
 import { startTransition } from "react";
-import { defualtBtnClass } from "../handleSendReq/page";
+import { defualtBtnClass } from "@/app/handleSendReq/page";
 import { useRouter } from "next/navigation";
 
 interface IError { 
@@ -24,3 +24,5 @@ const reload = () => {
 };
 
 export default Error;
+
+// this wave page register and forgot password still dosent working
