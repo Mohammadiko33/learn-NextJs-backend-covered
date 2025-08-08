@@ -5,10 +5,14 @@ interface ILayout {
   users: ReactNode;
   revenue: ReactNode;
   notifications: ReactNode;
+  login: ReactNode
 }
 
-const Layout = ({ children, users, revenue, notifications }: ILayout) => {
-  return (
+const Layout = ({ login , children, users, revenue, notifications }: ILayout) => {
+
+  const isLoggedIn = false
+
+  return isLoggedIn ? (
     <div>
       <div>{children}</div>
       <div className="flex">
@@ -19,7 +23,9 @@ const Layout = ({ children, users, revenue, notifications }: ILayout) => {
         <div className="flex flex-1">{notifications}</div>
       </div>
     </div>
-  );
+  ): (
+    login
+  )
 };
 
 export default Layout;
