@@ -6,7 +6,7 @@ import ErrorWrapper from "./error-wrapper";
 
 export const metadata: Metadata = {
   title: {
-    default: "Next.js - 29 - Handling Global Errors",
+    default: "Next.js - 30 - Parallel Routes",
     template: "18 - %s",
   },
   description: "Next.js v.15 Tutorial",

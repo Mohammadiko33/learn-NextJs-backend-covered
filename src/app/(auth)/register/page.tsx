@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 const register = () => {
 
-    throw new Error("we parsing error in line 10 (app / (auth) / register / page.tsx)")
+    // throw new Error("we parsing error in line 10 (app / (auth) / register / page.tsx)")
 
   return (
     <div>register</div>
