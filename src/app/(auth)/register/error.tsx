@@ -25,4 +25,4 @@ const reload = () => {
 
 export default Error;
 
-// this wave page register and forgot password still dosent working
+// this wave just carshed register page
