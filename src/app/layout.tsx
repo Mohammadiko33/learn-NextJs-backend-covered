@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import "./globals.css";
+import ErrorWrapper from "./error-wrapper";
 
 export const metadata: Metadata = {
   title: {
-    default: "Next.js - 27 - Handling Errors in Nested Routes",
+    default: "Next.js - 29 - Handling Global Errors",
     template: "18 - %s",
   },
   description: "Next.js v.15 Tutorial",
@@ -19,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header/>
-        {children}
-        <Footer/>
+        <Header />
+        <ErrorWrapper>{children}</ErrorWrapper>
+        <Footer />
       </body>
     </html>
   );
