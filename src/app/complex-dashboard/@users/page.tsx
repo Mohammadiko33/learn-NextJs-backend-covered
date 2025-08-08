@@ -1,10 +1,7 @@
-import Cart from '@/Components/Cart';
-import React from 'react';
+import Cart from "@/Components/Cart";
 
 const Users = () => {
-  return (
-    <Cart>Users</Cart>
-  );
+  return <Cart>Users</Cart>;
 };
 
 export default Users;

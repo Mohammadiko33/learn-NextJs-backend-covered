@@ -1,10 +1,7 @@
-import Cart from '@/Components/Cart'
-import React from 'react'
+import Cart from "@/Components/Cart";
 
 const Revenue = () => {
-  return (
-    <Cart>Revenue</Cart>
-  )
-}
+  return <Cart>Revenue</Cart>;
+};
 
-export default Revenue
+export default Revenue;

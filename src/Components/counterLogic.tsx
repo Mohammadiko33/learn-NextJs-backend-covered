@@ -7,4 +7,4 @@ const CounterLogic = () => {
   return <button onClick={() => setCount(prev => prev + 1)} className={`${defualtBtnClass} bg-blue-500`}>click me ({count})</button>
 }
 
-export default CounterLogic
+export default CounterLogic;

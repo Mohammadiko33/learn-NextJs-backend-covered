@@ -23,7 +23,6 @@ const Header = () => {
   const commentId = commentNum ?? 1;
 
   const linkItem: IlinkItem[] = [
-    { title: "dashboard", href: "/dashboard" },
     { title: "forgot Password", href: "/forgotPassword" },
     { title: "login", href: "/login" },
     { title: "register", href: "/register" },
@@ -36,6 +35,7 @@ const Header = () => {
     { title: "products detail comment id", href: `/products/${productId}/comments/${commentId}` },
     { title: "learn lang", href: "/articles/learn-new-lang" },
     { title: "order", href: "/order" },
+    { title: "complex Dashboard", href: "/complex-dashboard" },
   ];
 
   return (
