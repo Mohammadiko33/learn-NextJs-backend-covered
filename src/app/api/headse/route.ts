@@ -1,10 +1,23 @@
-import { headers } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { NextRequest } from "next/server";
 export async function GET(req: NextRequest) {
-    const headerList = await headers()
-        return new Response(`<h1 style="font-family: sans-serif;text-transform: capitalize;">this is simple title with h1 HTML tag</h1>` , {
-            headers: {
-                "Content-Type": "text/html"
-            }
-        })
+const reqHeaders = new Headers(req.headers)
+console.log(reqHeaders.get("Authorization"))
+
+const headersList = await headers()
+console.log(headersList.get("Authorization"))
+
+const theme = req.cookies.get("theme")
+console.log(theme)
+
+const cookieStore = await cookies()
+cookieStore.set("resPerPage" , "20")
+console.log(cookieStore.get("resPerPage"))
+
+return new Response("<h1>profile api data</h1>" , {
+    headers: {
+        "Content-Type": "text/html",
+        "Set-Cookie": "theme=dark"
+    }
+})
 }
