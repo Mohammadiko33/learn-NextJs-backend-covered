@@ -13,7 +13,7 @@ export const content: IContent[] = [
 ];
 
 export async function GET() {
-  return new Response(JSON.stringify({ message: "hello world" }), {
+  return new Response(JSON.stringify(content), {
     headers: BASE_Header,
     status: 200,
   });

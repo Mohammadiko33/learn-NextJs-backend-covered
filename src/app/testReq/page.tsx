@@ -1,6 +1,8 @@
 "use client";
 export const defualtBtnClass = `px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80`;
-export const BASE_Header : {"Content-Type": string} = { "Content-Type": "application/json" }
+export const BASE_Header: { "Content-Type": string } = {
+  "Content-Type": "application/json",
+};
 export default function TestReq() {
   const BASE_URL = "http://localhost:3000/api/testReq";
 
@@ -32,25 +34,50 @@ export default function TestReq() {
     }
   };
 
-  const num = 1
+  const num = 3;
 
   const handleReqGETOne = async () => {
-    const res = await fetch(BASE_URL + `/${num}`)
-    const data = await res.json()
-    console.log(data)
-  }
+    const res = await fetch(BASE_URL + `/${num}`);
+    const data = await res.json();
+    console.log(data);
+  };
+
+  const handleReqPATCH = async () => {
+    const res = await fetch(BASE_URL + `/${num}`, {
+      method: "PATCH",
+      headers: BASE_Header,
+      body: JSON.stringify({ title: "updateByPatch" }),
+    });
+    const data = await res.json();
+    console.log(data);
+  };
 
   return (
     <div className="fullCCenter ">
       <div className="flex gap-2 mt-6">
-        <button className={`${defualtBtnClass} bg-green-500`} onClick={handleReqGET}>
+        <button
+          className={`${defualtBtnClass} bg-green-500`}
+          onClick={handleReqGET}
+        >
           GET
         </button>
-        <button className={`${defualtBtnClass} bg-emerald-500`} onClick={handleReqGETOne}>
+        <button
+          className={`${defualtBtnClass} bg-emerald-500`}
+          onClick={handleReqGETOne}
+        >
           GET .{num}
         </button>
-        <button className={`${defualtBtnClass} bg-sky-500`} onClick={handleReqPOST}>
+        <button
+          className={`${defualtBtnClass} bg-sky-500`}
+          onClick={handleReqPOST}
+        >
           POST
+        </button>
+        <button
+          className={`${defualtBtnClass} bg-amber-500`}
+          onClick={handleReqPATCH}
+        >
+          PATCH .{num}
         </button>
       </div>
     </div>
