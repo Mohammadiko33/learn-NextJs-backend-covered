@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
 
 export interface IlinkItem {
   title: string;
@@ -14,6 +13,7 @@ const Header = () => {
   const linkItem: IlinkItem[] = [
     { title: "home", href: "/" },
     { title: "tesT Req", href: "/testReq" },
+    { title: "sesson header", href: "/headse" },
   ];
 
   return (
@@ -26,9 +26,9 @@ const Header = () => {
             key={title}
             href={href}
             className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ease-in-out text-sm
-              hover:bg-cyan-500 hover:text-black hover:shadow-cyan-400/30 hover:shadow-lg capitalize
+              hover:bg-cyan-500 hover:text-black capitalize
               ${isActive
-                ? "bg-cyan-400 text-black shadow-md scale-105"
+                ? "bg-cyan-400 text-black  scale-105 shadow-lg shadow-cyan-400/30"
                 : "bg-neutral-800 text-gray-300 hover:scale-105"
               }
             `}

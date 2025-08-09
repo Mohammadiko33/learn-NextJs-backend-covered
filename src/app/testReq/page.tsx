@@ -68,6 +68,10 @@ export default function TestReq() {
     }
   };
 
+  const handleReqPUT = async () => {
+    handleReqPATCH()
+  }
+
   const handleReqDELETE = async () => {
     const res = await fetch(BASE_URL + `/${num}`, {
       method: "DELETE",
@@ -148,7 +152,7 @@ export default function TestReq() {
         </button>
         <button
           className={`${defualtBtnClass} bg-orange-500`}
-          onClick={handleReqPATCH}
+          onClick={handleReqPUT}
         >
           PUT .{num}
         </button>
