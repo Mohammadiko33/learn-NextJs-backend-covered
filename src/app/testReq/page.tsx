@@ -32,11 +32,22 @@ export default function TestReq() {
     }
   };
 
+  const num = 1
+
+  const handleReqGETOne = async () => {
+    const res = await fetch(BASE_URL + `/${num}`)
+    const data = await res.json()
+    console.log(data)
+  }
+
   return (
     <div className="fullCCenter ">
       <div className="flex gap-2 mt-6">
-        <button className={`${defualtBtnClass} bg-emerald-500`} onClick={handleReqGET}>
+        <button className={`${defualtBtnClass} bg-green-500`} onClick={handleReqGET}>
           GET
+        </button>
+        <button className={`${defualtBtnClass} bg-emerald-500`} onClick={handleReqGETOne}>
+          GET .{num}
         </button>
         <button className={`${defualtBtnClass} bg-sky-500`} onClick={handleReqPOST}>
           POST
