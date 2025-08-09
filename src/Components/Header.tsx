@@ -12,7 +12,7 @@ const Header = () => {
   const pathname = usePathname();
   
   const linkItem: IlinkItem[] = [
-    { title: "gallery", href: "/gallery" },
+    { title: "home", href: "/" },
   ];
 
   return (
