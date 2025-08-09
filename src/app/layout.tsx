@@ -3,11 +3,11 @@ import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import "./globals.css";
 
-const episode = "39";
+const episode = "40";
 
 export const metadata: Metadata = {
   title: {
-    default: `Next.js - ${episode} - Handling PATCH Requests`,
+    default: `Next.js - ${episode} - Handling DELETE Requests`,
     template: `${episode} - %s`,
   },
   description: "Next.js v.15 Tutorial",

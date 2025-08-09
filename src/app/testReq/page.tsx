@@ -1,4 +1,7 @@
 "use client";
+
+import { toast, ToastContainer } from "react-toastify";
+
 export const defualtBtnClass = `px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80`;
 export const BASE_Header: { "Content-Type": string } = {
   "Content-Type": "application/json",
@@ -20,7 +23,6 @@ export default function TestReq() {
         body: JSON.stringify({ title: "this is new test title" }),
       });
 
-      // خطاها رو بهتر لاگ کن
       if (!res.ok) {
         const err = await res.json().catch(() => ({ message: "no json" }));
         console.error("POST error:", res.status, err);
@@ -28,18 +30,26 @@ export default function TestReq() {
       }
 
       const data = await res.json();
-      console.log("POST:", data);
+      if (data.message) {
+        toast.error(data.message, { position: "bottom-right" });
+      } else {
+        console.log("POST:", data);
+      }
     } catch (e) {
       console.error("fetch failed:", e);
     }
   };
 
-  const num = 3;
+  const num = 2;
 
   const handleReqGETOne = async () => {
     const res = await fetch(BASE_URL + `/${num}`);
     const data = await res.json();
-    console.log(data);
+    if (data.message) {
+      toast.error(data.message, { position: "bottom-right" });
+    } else {
+      console.log(data);
+    }
   };
 
   const handleReqPATCH = async () => {
@@ -49,11 +59,28 @@ export default function TestReq() {
       body: JSON.stringify({ title: "updateByPatch" }),
     });
     const data = await res.json();
-    console.log(data);
+    if (data.message) {
+      toast.error(data.message, { position: "bottom-right" });
+    } else {
+      console.log(data);
+    }
+  };
+
+  const handleReqDELETE = async () => {
+    const res = await fetch(BASE_URL + `/${num}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    if (data.message) {
+      toast.error(data.message, { position: "bottom-right" });
+    } else {
+      console.log(data);
+    }
   };
 
   return (
     <div className="fullCCenter ">
+      <ToastContainer />
       <div className="flex gap-2 mt-6">
         <button
           className={`${defualtBtnClass} bg-green-500`}
@@ -78,6 +105,18 @@ export default function TestReq() {
           onClick={handleReqPATCH}
         >
           PATCH .{num}
+        </button>
+        <button
+          className={`${defualtBtnClass} bg-orange-500`}
+          onClick={handleReqPATCH}
+        >
+          PUT .{num}
+        </button>
+        <button
+          className={`${defualtBtnClass} bg-red-500`}
+          onClick={handleReqDELETE}
+        >
+          DELETE .{num}
         </button>
       </div>
     </div>
