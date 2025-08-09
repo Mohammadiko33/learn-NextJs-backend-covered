@@ -1,3 +1,5 @@
+import { NextRequest } from "next/server";
+
 // app/api/testReq/route.ts
 export interface IContent {
   id: number;
@@ -12,11 +14,18 @@ export const content: IContent[] = [
   { id: 3, title: "title three" },
 ];
 
-export async function GET() {
-  return new Response(JSON.stringify(content), {
-    headers: BASE_Header,
-    status: 200,
-  });
+export async function GET(req: NextRequest) {
+  const searchParam = req.nextUrl.searchParams
+  const title = searchParam.get("title")
+  const filteredComment = content.filter(item => item.title.includes(title ?? ""))
+  if (filteredComment.length){
+    return new Response(JSON.stringify(filteredComment), {
+      headers: BASE_Header,
+      status: 200,
+    });
+  } else {
+    return Response.json({ message: "item not founded" }, { status: 404 });
+  }
 }
 
 export async function POST(request: Request) {

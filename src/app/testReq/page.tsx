@@ -1,5 +1,6 @@
 "use client";
 
+import { FormEvent, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 export const defualtBtnClass = `px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80`;
@@ -8,6 +9,7 @@ export const BASE_Header: { "Content-Type": string } = {
 };
 export default function TestReq() {
   const BASE_URL = "http://localhost:3000/api/testReq";
+  const [ipt, setIpt] = useState<string>("");
 
   const handleReqGET = async () => {
     const res = await fetch(BASE_URL);
@@ -78,6 +80,29 @@ export default function TestReq() {
     }
   };
 
+  const handleReqGETByFiltred = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (ipt && ipt.trim()) {
+      if (ipt.length > 2) {
+        if (ipt.length < 40) {
+          const res = await fetch(BASE_URL + `?title=${ipt.trim()}`);
+          const data = await res.json();
+          if (data.message) {
+            toast.error(data.message, { position: "bottom-right" });
+          } else {
+            console.log(data);
+          }
+        } else {
+          toast.error("ipt is too long", { position: "bottom-right" });
+        }
+      } else {
+        toast.error("ipt is too small", { position: "bottom-right" });
+      }
+    } else {
+      toast.error("ipt value is empty", { position: "bottom-right" });
+    }
+  };
+
   return (
     <div className="fullCCenter ">
       <ToastContainer />
@@ -88,6 +113,21 @@ export default function TestReq() {
         >
           GET
         </button>
+        <form
+          className={`${defualtBtnClass} bg-lime-600 gap-3 flex flex-row-reverse cursor-alias`}
+          onSubmit={handleReqGETByFiltred}
+        >
+          <input
+            className="outline-none w-14"
+            type="text"
+            placeholder="search"
+            value={ipt}
+            onChange={(e) => setIpt(e.target.value)}
+          />
+          <button type="submit" className="cursor-pointer">
+            GET By
+          </button>
+        </form>
         <button
           className={`${defualtBtnClass} bg-emerald-500`}
           onClick={handleReqGETOne}
