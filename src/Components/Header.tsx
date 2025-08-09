@@ -10,33 +10,9 @@ export interface IlinkItem {
 
 const Header = () => {
   const pathname = usePathname();
-  const [productNum, setProductNum] = useState<number | null>(null);
-  const [commentNum, setCommentNum] = useState<number | null>(null);
-
-  useEffect(() => {
-    setProductNum(Math.ceil(Math.random() * 100));
-    setCommentNum(Math.ceil(Math.random() * 100));
-  }, []);
-
-  // Use fallback values until random numbers are set on the client
-  const productId = productNum ?? 1;
-  const commentId = commentNum ?? 1;
-
+  
   const linkItem: IlinkItem[] = [
-    { title: "forgot Password", href: "/forgotPassword" },
-    { title: "login", href: "/login" },
-    { title: "register", href: "/register" },
-    { title: "counter", href: "/counter" },
-    { title: "docs", href: "/docs/react-vs-vue" },
-    { title: "handleSendReq", href: "/handleSendReq" },
-    { title: "products", href: "/products" },
-    { title: "products detail", href: `/products/${productId}` },
-    { title: "products detail comments", href: `/products` },
-    { title: "products detail comment id", href: `/products/${productId}/comments/${commentId}` },
-    { title: "learn lang", href: "/articles/learn-new-lang" },
-    { title: "order", href: "/order" },
-    { title: "complex Dashboard", href: "/complex-dashboard" },
-    { title: "folders", href: "/folders" },
+    { title: "gallery", href: "/gallery" },
   ];
 
   return (

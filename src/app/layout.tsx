@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import "./globals.css";
-import ErrorWrapper from "./error-wrapper";
 
-const episode = "33"
+const episode = "34";
 
 export const metadata: Metadata = {
   title: {
-    default: `Next.js - ${episode} - Intercepting Routes`,
+    default: `Next.js - ${episode} - Parallel Intercepting Routes`,
     template: `${episode} - %s`,
   },
   description: "Next.js v.15 Tutorial",
@@ -23,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        <ErrorWrapper>{children}</ErrorWrapper>
+        {children}
         <Footer />
       </body>
     </html>
