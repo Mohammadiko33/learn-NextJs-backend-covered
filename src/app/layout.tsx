@@ -3,11 +3,11 @@ import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import "./globals.css";
 
-const episode = "43";
+const episode = "45";
 
 export const metadata: Metadata = {
   title: {
-    default: `Next.js - ${episode} - Cookies in Route Handlers`,
+    default: `Next.js - ${episode} - Caching in Route Handlers`,
     template: `${episode} - %s`,
   },
   description: "Next.js v.15 Tutorial",
