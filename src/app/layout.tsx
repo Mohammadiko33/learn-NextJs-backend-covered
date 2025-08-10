@@ -3,11 +3,11 @@ import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import "./globals.css";
 
-const episode = "50";
+const episode = "51";
 
 export const metadata: Metadata = {
   title: {
-    default: `Next.js - ${episode} - Suspense SSR`,
+    default: `Next.js - ${episode} - React Server Components`,
     template: `${episode} - %s`,
   },
   description: "Next.js v.15 Tutorial",
