@@ -12,13 +12,25 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 --- 
 
-<img src="./public/ComponentHierarchy.png" style="width: 100%; text-align: center;" alt="ComponentHierarchy">
+<img src="./public/ReadMe-images/ComponentHierarchy.png" style="width: 100%; text-align: center;" alt="ComponentHierarchy">
 
 ---
 
-<img src="./public/independentRouteHandlingContd.png" style="width: 100%; text-align: center;" alt="ComponentHierarchy">
-<img src="./public/subNavigationInRoutesContd.png" style="width: 100%; text-align: center;" alt="ComponentHierarchy">
+<img src="./public/ReadMe-images/independentRouteHandlingContd.png" style="width: 100%; text-align: center;" alt="ComponentHierarchy">
+<img src="./public/ReadMe-images/subNavigationInRoutesContd.png" style="width: 100%; text-align: center;" alt="ComponentHierarchy">
 
+---
+---
+
+CSR (Client Side Rendering) : 
+
+<img src="./public/ReadMe-images/CSR.png" style="width: 100%; text-align: center;" alt="CSR">
+
+SSR (Server Side Rendering) :
+
+<img src="./public/ReadMe-images/SSR.png" style="width: 100%; text-align: center;" alt="SSR">
+
+---
 ---
 
 ### Status 100 : continue /|\ استاتوس 100 : یعنی ادامه بده، هنوز کامل نیست
