@@ -1,3 +1,5 @@
+export const dynamic = "force-static"
+
 export async function GET() {
     const categories = [
         { id: 1, name: "Electronics" },
@@ -8,3 +10,4 @@ export async function GET() {
 
     return Response.json(categories)
 }
+
