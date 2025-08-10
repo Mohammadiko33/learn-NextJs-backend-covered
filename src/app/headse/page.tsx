@@ -1,5 +1,6 @@
 "use client";
 import { defualtBtnClass } from "@/app/testReq/page";
+import { redirect } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
 
 const Heading = () => {
@@ -21,6 +22,15 @@ const Heading = () => {
     }
   };
 
+  const timeClose = 2000
+
+  const handleRedirect = async () => {
+    toast.success(`${timeClose.toString().slice(0,1)}s ta redicert to home` , {position: "bottom-right" , autoClose: timeClose})
+    setTimeout(() => {
+      redirect("/")
+    }, timeClose + 750)
+  }
+
   return (
     <div className="fullCCenter ">
       <ToastContainer />
@@ -31,6 +41,7 @@ const Heading = () => {
         >
           GET
         </button>
+        <button className={`${defualtBtnClass} bg-blue-500`} onClick={handleRedirect}>redirect at home</button>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
-export const defualtBtnClass = `px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80`;
+export const defualtBtnClass = `px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80 capitalize`;
 export const BASE_Header: { "Content-Type": string } = {
   "Content-Type": "application/json",
 };
@@ -108,7 +108,7 @@ export default function TestReq() {
   };
 
   return (
-    <div className="fullCCenter ">
+    <div className="fullCCenter">
       <ToastContainer />
       <div className="flex gap-2 mt-6">
         <button
