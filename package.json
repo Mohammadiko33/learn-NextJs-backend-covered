@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "tailwind:init": "tailwindcss init"
+    "tailwind:init": "tailwindcss init",
+    "db": "npx json-server --watch src/db.json --port 4000"
   },
   "dependencies": {
     "@types/react-slick": "^0.23.13",
+    "axios": "^1.11.0",
     "next": "15.4.5",
     "prisma": "^6.13.0",
     "react": "19.1.0",

@@ -13,12 +13,7 @@ const Header = () => {
   const linkItem: IlinkItem[] = [
     { title: "home", href: "/" },
     { title: "tesT Req", href: "/testReq" },
-    { title: "sesson header", href: "/headse" },
-    { title: "product reviews", href: "/product-reviews" },
-    { title: "server route", href: "/server-route" },
-    { title: "client route", href: "/client-route" },
-    { title: "landing-page", href: "/landing-page" },
-    { title: "interleaving", href: "/interleaving" },
+    { title: "user client", href: "/user-client" },
   ];
 
   return (
