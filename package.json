@@ -16,6 +16,7 @@
     "react-dom": "19.1.0",
     "react-spinners": "^0.17.0",
     "react-toastify": "^11.0.5",
+    "server-only": "^0.0.1",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {

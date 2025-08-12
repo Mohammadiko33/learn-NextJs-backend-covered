@@ -15,6 +15,8 @@ const Header = () => {
     { title: "tesT Req", href: "/testReq" },
     { title: "sesson header", href: "/headse" },
     { title: "product reviews", href: "/product-reviews" },
+    { title: "server route", href: "/server-route" },
+    { title: "client route", href: "/client-route" },
   ];
 
   return (
