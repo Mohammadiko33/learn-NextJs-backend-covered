@@ -6,7 +6,7 @@ const episode = "64";
 
 export const metadata: Metadata = {
   title: {
-    default: `Next.js - ${episode} - Changing To Client Component`,
+    default: `Next.js - ${episode} - Client Component Placement`,
     template: `${episode} - %s`,
   },
   description: "Next.js v.15 Tutorial",
