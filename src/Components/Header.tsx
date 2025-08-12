@@ -17,6 +17,7 @@ const Header = () => {
     { title: "product reviews", href: "/product-reviews" },
     { title: "server route", href: "/server-route" },
     { title: "client route", href: "/client-route" },
+    { title: "landing-page", href: "/landing-page" },
   ];
 
   return (

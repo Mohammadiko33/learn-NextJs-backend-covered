@@ -33,6 +33,11 @@ SSR (Server Side Rendering) :
 ---
 ---
 
+<img src="./public/ReadMe-images/ChangingToClientComponent.png" style="width: 100%; text-align: center;" alt="ChangingToClientComponent">
+
+---
+---
+
 ### Status 100 : continue /|\ استاتوس 100 : یعنی ادامه بده، هنوز کامل نیست
 
 ### Status 101 : switching protocols /|\ استاتوس 101 : یعنی در حال تغییر پروتکل هستیم
