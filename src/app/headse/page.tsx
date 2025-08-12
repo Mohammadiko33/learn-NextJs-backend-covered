@@ -1,5 +1,4 @@
 "use client";
-import { defualtBtnClass } from "@/app/testReq/page";
 import { redirect } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -36,12 +35,12 @@ const Heading = () => {
       <ToastContainer />
       <div className="flex gap-2 mt-6">
         <button
-          className={`${defualtBtnClass} bg-green-500`}
+          className="bg-green-500"
           onClick={handleReqGET}
         >
           GET
         </button>
-        <button className={`${defualtBtnClass} bg-blue-500`} onClick={handleRedirect}>redirect at home</button>
+        <button className="bg-blue-500" onClick={handleRedirect}>redirect at home</button>
       </div>
     </div>
   );

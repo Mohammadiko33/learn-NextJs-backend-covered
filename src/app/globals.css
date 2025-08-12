@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+.fullCenter , .fullcenter {
+  @apply h-screen flex justify-center items-center;
+}
+
+.fullCenterCol , .fullcentercol , .fullCCenter {
+  @apply h-screen flex flex-col justify-center items-center;
+}
+
+button{
+  @apply px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80 capitalize;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,19 +35,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.fullCenter , .fullcenter , .rsc {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.fullCCenter , .fullccenter , .fullCenterCol , .fullcentercol , .csc {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }

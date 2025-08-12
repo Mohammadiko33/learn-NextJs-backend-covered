@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Header from "@/Components/Header";
-import Footer from "@/Components/Footer";
 import "./globals.css";
 
-const episode = "55";
+const episode = "56";
 
 export const metadata: Metadata = {
   title: {
-    default: `Next.js - ${episode} - Dynamic Rendering`,
+    default: `Next.js - ${episode} - Streaming`,
     template: `${episode} - %s`,
   },
   description: "Next.js v.15 Tutorial",
@@ -23,7 +22,6 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );

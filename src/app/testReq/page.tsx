@@ -1,9 +1,7 @@
 "use client";
-
 import { FormEvent, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
-export const defualtBtnClass = `px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80 capitalize`;
 export const BASE_Header: { "Content-Type": string } = {
   "Content-Type": "application/json",
 };
@@ -54,11 +52,11 @@ export default function TestReq() {
     }
   };
 
-  const handleReqPATCH = async () => {
+const handleReqPATCH = async (updateBy: "PATCH" | "PUT" = "PATCH") => {
     const res = await fetch(BASE_URL + `/${num}`, {
       method: "PATCH",
       headers: BASE_Header,
-      body: JSON.stringify({ title: "updateByPatch" }),
+      body: JSON.stringify({ title: `updateBy${updateBy}` }),
     });
     const data = await res.json();
     if (data.message) {
@@ -68,9 +66,7 @@ export default function TestReq() {
     }
   };
 
-  const handleReqPUT = async () => {
-    handleReqPATCH()
-  }
+const handleReqPUT = async () => handleReqPATCH("PUT");
 
   const handleReqDELETE = async () => {
     const res = await fetch(BASE_URL + `/${num}`, {
@@ -112,17 +108,17 @@ export default function TestReq() {
       <ToastContainer />
       <div className="flex gap-2 mt-6">
         <button
-          className={`${defualtBtnClass} bg-green-500`}
+          className="bg-green-500"
           onClick={handleReqGET}
         >
           GET
         </button>
         <form
-          className={`${defualtBtnClass} bg-lime-600 gap-3 flex flex-row-reverse cursor-alias`}
+          className="bg-lime-600 flex flex-row-reverse cursor-alias rounded"
           onSubmit={handleReqGETByFiltred}
         >
           <input
-            className="outline-none w-14"
+            className="outline-none w-14 mr-2"
             type="text"
             placeholder="search"
             value={ipt}
@@ -133,31 +129,31 @@ export default function TestReq() {
           </button>
         </form>
         <button
-          className={`${defualtBtnClass} bg-emerald-500`}
+          className="bg-emerald-500"
           onClick={handleReqGETOne}
         >
           GET .{num}
         </button>
         <button
-          className={`${defualtBtnClass} bg-sky-500`}
+          className="bg-sky-500"
           onClick={handleReqPOST}
         >
           POST
         </button>
         <button
-          className={`${defualtBtnClass} bg-amber-500`}
-          onClick={handleReqPATCH}
+          className="bg-amber-500"
+          onClick={() => handleReqPATCH()}
         >
           PATCH .{num}
         </button>
         <button
-          className={`${defualtBtnClass} bg-orange-500`}
+          className="bg-orange-500"
           onClick={handleReqPUT}
         >
           PUT .{num}
         </button>
         <button
-          className={`${defualtBtnClass} bg-red-500`}
+          className="bg-red-500"
           onClick={handleReqDELETE}
         >
           DELETE .{num}
