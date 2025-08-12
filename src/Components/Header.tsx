@@ -18,6 +18,7 @@ const Header = () => {
     { title: "server route", href: "/server-route" },
     { title: "client route", href: "/client-route" },
     { title: "landing-page", href: "/landing-page" },
+    { title: "interleaving", href: "/interleaving" },
   ];
 
   return (
