@@ -27,3 +27,15 @@ export interface User {
   website: string;
   company: Company;
 }
+
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+export interface IAuthor {
+  id: number;
+  name: string;
+}
