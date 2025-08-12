@@ -1,4 +1,4 @@
-import "server-only"
+import "client-only"
 export const serverSide = () => {
     console.log(`
         use multiple libraries
