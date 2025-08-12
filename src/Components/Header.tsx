@@ -20,7 +20,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="flex flex-wrap gap-4 justify-center px-4 py-5 bg-neutral-900 bg-opacity-80 rounded-xl shadow-lg animate-fade-in">
+    <div className="flex flex-wrap gap-4 justify-center px-4 py-5 bg-neutral-900 bg-opacity-80 rounded-xl shadow-lg animate-fade-in fixed w-full top-0">
       {linkItem.map(({ title, href }) => {
         const isActive = pathname === href && href !== "/";
 
