@@ -1,15 +1,20 @@
-"use client";
+"use client"
+import React, { useState } from 'react';
+import ClientComponentTwo from './Client-component-two';
 
-import { useState } from "react";
-import ClientComponentTwo from "./Client-component-two";
-import ServerComponentTwo from "./Server-component-two";
+interface IClientComponentOne {
+  children: React.ReactNode
+}
 
-export default function ClientComponentOne() {
+const ClientComponentOne = ({children}: IClientComponentOne) => {
   const [name, setName] = useState<string>("Muhammad");
   return (
     <>
       <h1>Client Component One</h1>
-      <ServerComponentTwo />
+      <ClientComponentTwo />
+      {children}
     </>
   );
-}
+};
+
+export default ClientComponentOne;
