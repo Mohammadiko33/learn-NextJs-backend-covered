@@ -1,9 +1,12 @@
 import { serverSide } from "@/Components/utils/server"
+import ImageSlider from "@/Components/ImageSlider"
 
 const SeverRoute = () => {
   const res = serverSide()
   return (
-    <div>SeverRoute , {res}</div>
+    <div className="fullcenter">SeverRoute , {res}
+      <ImageSlider/>
+    </div>
   )
 }
 

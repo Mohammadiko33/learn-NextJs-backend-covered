@@ -1,25 +1,14 @@
 "use client"
 import React from "react"
 import { clientSide } from "@/Components/utils/client"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import ImageSlider from "@/Components/ImageSlider"
 
 const ClientRoute = () => {
   const res = clientSide()
-  const settings = {
-    dots: true,
-  }
   return (
-    <div className="pt-96 my-0 mx-auto w-[400px]">
+    <div className="">
       <p>ClientRoute , {res}</p>
-        <Slider {...settings}>
-        <div className="w-24 h-24"><img className="w-full object-cover" src="/ReadMe-images/CSR.png" alt="CSR" /></div>
-        <div className="w-24 h-24"><img className="w-full object-cover" src="/ReadMe-images/SSR.png" alt="SSR" /></div>
-        <div className="w-24 h-24"><img className="w-full object-cover" src="/ReadMe-images/ComponentHierarchy.png" alt="ComponentHierarchy" /></div>
-        <div className="w-24 h-24"><img className="w-full object-cover" src="/ReadMe-images/RSC-loading-sequence.png" alt="RSC-loading-sequence" /></div>
-        <div className="w-24 h-24"><img className="w-full object-cover" src="/ReadMe-images/RSC-Update-Sequence.png" alt="RSC-Update-Sequence" /></div>
-        </Slider>
+      <ImageSlider/>
     </div>
   )
 }
