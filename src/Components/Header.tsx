@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export interface IlinkItem {
   title: string;
@@ -15,7 +16,7 @@ const Header = () => {
     { title: "tesT Req", href: "/testReq" },
     { title: "user client", href: "/user-client" },
     { title: "user server", href: "/user-server" },
-    { title: "post sequential", href: "/post-sequential" },
+    { title: "user parallel", href: `/user-parallel` },
   ];
 
   return (

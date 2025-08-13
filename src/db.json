@@ -231,7 +231,7 @@
       }
     }
   ],
-  "post": [
+  "posts": [
     {
       "userId": 1,
       "id": 1,
@@ -831,6 +831,33 @@
       "id": 100,
       "title": "at nam consequatur ea labore ea harum",
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
+    }
+  ],
+  "albums": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "quidem molestiae enim"
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "sunt qui excepturi placeat culpa"
+    },
+    {
+      "userId": 2,
+      "id": 3,
+      "title": "omnis laborum adio"
+    },
+    {
+      "userId": 2,
+      "id": 4,
+      "title": "non esse culpa molestiae omnis"
+    },
+    {
+      "userId": 3,
+      "id": 5,
+      "title": "natus impedit quibusdam ille est"
     }
   ]
 }

@@ -39,3 +39,13 @@ export interface IAuthor {
   id: number;
   name: string;
 }
+
+export interface IAlbum {
+  userId: number;
+  id: number;
+  title: string;
+}
+
+export interface IParamId {
+  params: Promise<{id: string}>
+}
