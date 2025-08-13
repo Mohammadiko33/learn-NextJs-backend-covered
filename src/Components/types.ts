@@ -56,3 +56,11 @@ export interface IProduct {
   price: number;
   desc: string | null;
 }
+
+export interface IError {
+  title?: string;
+  price?: string;
+  desc?: string;
+}
+
+export type IformState = { errors: IError }
