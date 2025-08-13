@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Header from "@/Components/Header";
 import "./globals.css";
 
-const episode = "74";
+const episode = "75";
 
 export const metadata: Metadata = {
   title: {
-    default: `Next.js - ${episode} - Forms with Server Actions`,
+    default: `Next.js - ${episode} - Pending State with useFormStatus`,
     template: `${episode} - %s`,
   },
   description: "Next.js v.15 Tutorial",

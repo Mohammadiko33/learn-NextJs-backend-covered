@@ -1,3 +1,4 @@
+import SubmitBtn from '@/Components/SubmitBtn'
 import { addProduct } from '@/prisma-db'
 import { redirect } from 'next/navigation'
 import React from 'react'
@@ -20,7 +21,7 @@ const AddProductPage = () => {
       <input type="text" name="title" placeholder="enter title ..." className="placeholder-white block w-full p-2 text-black border-rounded" />
       <input type="text" name="price" placeholder="enter price ..." className="placeholder-white block w-full p-2 text-black border-rounded" />
       <textarea name="desc" placeholder="enter price ..." className="placeholder-white block w-full p-2 text-black border-rounded" />
-      <button type="submit" className="bg-blue-500 block" >Submit</button>
+      <SubmitBtn/>
     </form>
   )
 }

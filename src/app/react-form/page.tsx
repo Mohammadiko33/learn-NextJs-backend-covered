@@ -29,7 +29,7 @@ const CreateProduct = () => {
     <form onSubmit={handleSubmit} className="p-4 space-y-4 max-w-96">
       <input type="text" name="title" onChange={e => setTitle(e.target.value)} placeholder="enter title ..." className="placeholder-white block w-full p-2 text-black border-rounded" />
       <input type="text" name="price" onChange={e => setPrice(e.target.value)} placeholder="enter price ..." className="placeholder-white block w-full p-2 text-black border-rounded" />
-      <textarea name="desc" placeholder="enter price ..." onChange={e => setPrice(e.target.value)} className="placeholder-white block w-full p-2 text-black border-rounded" />
+      <textarea name="desc" placeholder="enter price ..." onChange={e => setDesc(e.target.value)} className="placeholder-white block w-full p-2 text-black border-rounded" />
       <button type="submit" className="bg-blue-500 block" disabled={loading}>{loading ? "Submitting ..." : "Submit"}</button>
     </form>
   )
