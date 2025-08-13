@@ -49,3 +49,10 @@ export interface IAlbum {
 export interface IParamId {
   params: Promise<{id: string}>
 }
+
+export interface IProduct {
+  id: number;
+  title: string;
+  price: number;
+  desc: string | null;
+}
