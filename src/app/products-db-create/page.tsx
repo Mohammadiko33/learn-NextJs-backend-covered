@@ -1,79 +1,55 @@
-import { IformState, IError } from "@/Components/types";
-import React, { useActionState } from "react";
-import { formState , createProduct } from "@/actions/products"
+"use client";
 
-const AddProductPage = () => {
-  const initialState: IformState = { errors: {} };
+import { IformState } from "@/Components/types";
+import { createProduct as createProductAction } from "@/actions/products";
+import { useFormState, useFormStatus } from "react-dom";
 
-  const [state, formAction, isPending] = useActionState(
-    createProduct,
-    initialState
-  );
+const initialState: IformState = { errors: {} };
 
-  async function createProduct(formData: FormData) {
-    "use server";
-    const title = formData.get("title") as string;
-    const price = formData.get("price") as string;
-    const desc = formData.get("desc") as string;
-
-    const errors: IError = {};
-    if (!title) {
-      errors.title = "title is required";
-    }
-    if (!price) {
-      errors.title = "price is required";
-    }
-    if (!desc) {
-      errors.title = "description is required";
-    }
-
-    if (Object.keys(errors).length) {
-      return { errors };
-    }
-
-    await addProduct(title, parseInt(price), desc);
-    redirect("/product-db");
-  }
+export default function AddProductPage() {
+  const [state, formAction] = useFormState(createProductAction, initialState);
+  const { pending } = useFormStatus();
 
   return (
     <form action={formAction} className="p-4 space-y-4 max-w-96">
-      <div className="">
+      <div>
         <input
           type="text"
           name="title"
           placeholder="enter title ..."
           className="placeholder-white block w-full p-2 text-black border-rounded"
         />
-        {state.errors.title ? (
+        {state.errors.title && (
           <p className="text-red-600">{state.errors.title}</p>
-        ) : null}
+        )}
       </div>
-      <div className="">
+
+      <div>
         <input
           type="text"
           name="price"
           placeholder="enter price ..."
           className="placeholder-white block w-full p-2 text-black border-rounded"
         />
-        {state.errors.price ? (
+        {state.errors.price && (
           <p className="text-red-600">{state.errors.price}</p>
-        ) : null}
+        )}
       </div>
-      <div className="">
+
+      <div>
         <textarea
           name="desc"
-          placeholder="enter price ..."
+          placeholder="enter description ..."
           className="placeholder-white block w-full p-2 text-black border-rounded"
         />
-        {state.errors.desc ? (
+        {state.errors.desc && (
           <p className="text-red-600">{state.errors.desc}</p>
-        ) : null}
+        )}
       </div>
-      <button type="submit" className="bg-blue-500 block" disabled={isPending}>
-        {isPending ? "Submitting ..." : "Submit"}
+
+      <button type="submit" className="bg-blue-500 block" disabled={pending}>
+        {pending ? "Submitting ..." : "Submit"}
       </button>
     </form>
   );
-};
-
-export default AddProductPage;
+}

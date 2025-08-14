@@ -1,16 +1,26 @@
 "use server";
 
-import { addProduct, updateProduct, deleteProduct } from "@/prisma-db";
-import { redirect } from "next/navigation";
+import { addProduct, updateProduct } from "@/prisma-db";
+import { deleteProduct } from "@/prisma-db";
 import { revalidatePath } from "next/cache";
-import { IError, IformState } from "@/Components/types";
+import { redirect } from "next/navigation";
 
-export async function createProduct(prevState: IformState, formData: FormData) {
+export type Errors = {
+  title?: string;
+  price?: string;
+  desc?: string;
+};
+
+export type FormState = {
+  errors: Errors;
+};
+
+export async function createProduct(prevState: FormState, formData: FormData) {
   const title = formData.get("title") as string;
   const price = formData.get("price") as string;
-  const desc = formData.get("description") as string;
+  const desc = formData.get("desc") as string;
 
-  const errors: IError = {};
+  const errors: Errors = {};
 
   if (!title) {
     errors.title = "Title is required";
@@ -21,7 +31,7 @@ export async function createProduct(prevState: IformState, formData: FormData) {
   }
 
   if (!desc) {
-    errors.desc = "Description is required";
+    errors.desc = "desc is required";
   }
 
   if (Object.keys(errors).length > 0) {
@@ -32,28 +42,17 @@ export async function createProduct(prevState: IformState, formData: FormData) {
   redirect("/products-db");
 }
 
-export async function editProduct(
-  id: number,
-  prevState: IformState,
-  formData: FormData
-) {
+export async function editProduct(prevState: FormState, formData: FormData) {
+  const id = Number(formData.get("id"));
   const title = formData.get("title") as string;
   const price = formData.get("price") as string;
-  const desc = formData.get("description") as string;
+  const desc = formData.get("desc") as string;
 
-  const errors: IError = {};
+  const errors: Errors = {};
 
-  if (!title) {
-    errors.title = "Title is required";
-  }
-
-  if (!price) {
-    errors.price = "Price is required";
-  }
-
-  if (!desc) {
-    errors.desc = "Description is required";
-  }
+  if (!title) errors.title = "Title is required";
+  if (!price) errors.price = "Price is required";
+  if (!desc) errors.desc = "Description is required";
 
   if (Object.keys(errors).length > 0) {
     return { errors };

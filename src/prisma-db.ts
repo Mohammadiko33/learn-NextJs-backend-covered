@@ -33,13 +33,13 @@ export async function addProduct(title: string , price: number , desc: string) {
     })
 }
 
-export async function updateProduct( id: string , title: string , price: number , desc: string) {
-    await new Promise(resolve => setTimeout(resolve , 1500))
+export async function updateProduct(id: number, title: string, price: number, desc: string) {
+    await new Promise(resolve => setTimeout(resolve , 1500));
     return prisma.product.update({
         where: { id },
         data: { title , price , desc }
-    })
-} 
+    });
+}
 
 export async function deleteProduct(id: number) {
     await new Promise((resolve) => setTimeout(resolve , 1500))
