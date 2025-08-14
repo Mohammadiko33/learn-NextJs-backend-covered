@@ -1,37 +1,28 @@
 import { NextRequest } from "next/server";
+import { content, IContent } from "@/data/content";
 
-// app/api/testReq/route.ts
-export interface IContent {
-  id: number;
-  title: string;
-}
-
-const BASE_Header = { "Content-Type": "application/json" }
-
-export const content: IContent[] = [
-  { id: 1, title: "title one" },
-  { id: 2, title: "title two" },
-  { id: 3, title: "title three" },
-];
+const BASE_Header = { "Content-Type": "application/json" };
 
 export async function GET(req: NextRequest) {
-  const searchParam = req.nextUrl.searchParams
-  const title = searchParam.get("title")
-  const filteredComment = content.filter(item => item.title.includes(title ?? ""))
-  if (filteredComment.length){
+  const searchParam = req.nextUrl.searchParams;
+  const title = searchParam.get("title");
+  const filteredComment = content.filter(item =>
+    item.title.includes(title ?? "")
+  );
+
+  if (filteredComment.length) {
     return new Response(JSON.stringify(filteredComment), {
       headers: BASE_Header,
       status: 200,
     });
   } else {
-    return Response.json({ message: "item not founded" }, { status: 404 });
+    return Response.json({ message: "item not found" }, { status: 404 });
   }
 }
 
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-
     if (typeof data?.title === "string" && data.title.trim().length > 0) {
       const newContent: IContent = {
         id: content.length + 1,
@@ -43,15 +34,9 @@ export async function POST(request: Request) {
         status: 201,
       });
     } else {
-      return new Response(JSON.stringify({ message: "title is empty" }), {
-        headers: BASE_Header,
-        status: 400,
-      });
+      return Response.json({ message: "title is empty" }, { status: 400 });
     }
-  } catch (err) {
-    return new Response(JSON.stringify({ message: "invalid JSON" }), {
-      headers: BASE_Header,
-      status: 400,
-    });
+  } catch {
+    return Response.json({ message: "invalid JSON" }, { status: 400 });
   }
 }
