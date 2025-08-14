@@ -1,11 +1,9 @@
+// src/app/api/testReq/[id]/route.ts
 import { content } from "@/data/content";
+import { NextRequest } from "next/server";
 
-export interface ParamID {
-  params: { id: string };
-}
-
-export async function GET(_: Request, { params }: ParamID) {
-  const { id } = params;
+export async function GET(req: NextRequest, context: { params: { id: string } }) {
+  const { id } = context.params;
   const exist = content.find(item => item.id === +id);
   if (exist) {
     return Response.json(exist);
@@ -14,8 +12,8 @@ export async function GET(_: Request, { params }: ParamID) {
   }
 }
 
-export async function PATCH(req: Request, { params }: ParamID) {
-  const { id } = params;
+export async function PATCH(req: NextRequest, context: { params: { id: string } }) {
+  const { id } = context.params;
   const body = await req.json();
   if (body?.title?.trim()) {
     const index = content.findIndex(item => item.id === +id);
@@ -30,8 +28,8 @@ export async function PATCH(req: Request, { params }: ParamID) {
   }
 }
 
-export async function DELETE(_: Request, { params }: ParamID) {
-  const { id } = params;
+export async function DELETE(req: NextRequest, context: { params: { id: string } }) {
+  const { id } = context.params;
   const index = content.findIndex(item => item.id === +id);
   if (index !== -1) {
     content.splice(index, 1);
