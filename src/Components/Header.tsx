@@ -14,6 +14,7 @@ const Header = () => {
   const linkItem: IlinkItem[] = [
     { title: "home", href: "/" },
     { title: "tesT Req", href: "/testReq" },
+    { title: "dashboard", href: "/dashboard" },
   ];
 
   return (
