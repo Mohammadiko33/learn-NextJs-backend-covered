@@ -12,6 +12,18 @@ button{
   @apply px-4 py-2 rounded-md text-lg cursor-pointer duration-100 hover:opacity-80 capitalize;
 }
 
+.headLink {
+  @apply px-4 py-2 rounded-full font-medium transition-all duration-300 ease-in-out text-sm hover:bg-cyan-500 hover:text-black capitalize flex items-center justify-center
+}
+
+.headLinkActive {
+  @apply bg-cyan-400 text-black  scale-105 shadow-lg shadow-cyan-400/30
+}
+
+.headLinkNotActive {
+  @apply bg-neutral-800 text-gray-300 hover:scale-105
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
