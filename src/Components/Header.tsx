@@ -1,5 +1,5 @@
 "use client";
-import { SignInButton, SignOutButton, UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignInButton, SignOutButton, UserButton, SignedIn, SignedOut, SignUpButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -39,7 +39,8 @@ const Header = () => {
 
       <div className="flex items-center gap-4">
         <SignedOut>
-          <SignInButton>Sign In</SignInButton>
+          <SignInButton mode="modal"><button className="bg-sky-500">Sign In</button></SignInButton>
+          <SignUpButton mode="modal"><button className="bg-blue-500">Sign up</button></SignUpButton>
         </SignedOut>
 
         <SignedIn>

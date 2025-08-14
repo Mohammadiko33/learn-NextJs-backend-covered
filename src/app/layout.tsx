@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import Header from "@/Components/Header";
 import "./globals.css";
 
-const episode = "90";
+const episode = "91";
 
 export const metadata: Metadata = {
   title: {
-    default: `Next.js - ${episode} - Role Based Access Control`,
+    default: `Next.js - ${episode} - Customizing Clerk Components`,
     template: `${episode} - %s`,
   },
   description: "Next.js v.15 Tutorial",
