@@ -20,7 +20,6 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-slick": "^0.31.0",
-    "react-slick-carousel": "^0.14.9",
     "react-spinners": "^0.17.0",
     "react-toastify": "^11.0.5",
     "server-only": "^0.0.1",
