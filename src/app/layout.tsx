@@ -2,12 +2,13 @@ import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import Header from "@/Components/Header";
 import "./globals.css";
+import Navigation from "@/Components/Navigation";
 
-const episode = "83 & 84";
+const episode = "85";
 
 export const metadata: Metadata = {
   title: {
-    default: `Next.js - ${episode} - Authentication & Clerk Setup`,
+    default: `Next.js - ${episode} - Sign in and Sign out`,
     template: `${episode} - %s`,
   },
   description: "Next.js v.15 Tutorial",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <Header />
+          <Navigation />
           {children}
         </body>
       </html>
