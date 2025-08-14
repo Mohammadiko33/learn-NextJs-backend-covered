@@ -1,9 +1,9 @@
 // src/app/api/testReq/[id]/route.ts
-import { content } from "@/data/content";
-import { NextRequest } from "next/server";
 
-export async function GET(req: NextRequest, context: { params: { id: string } }) {
-  const { id } = context.params;
+import { content } from "@/data/content";
+
+export async function GET(req: Request, { params }: { params: { id: string } }) {
+  const { id } = params;
   const exist = content.find(item => item.id === +id);
   if (exist) {
     return Response.json(exist);
@@ -12,8 +12,8 @@ export async function GET(req: NextRequest, context: { params: { id: string } })
   }
 }
 
-export async function PATCH(req: NextRequest, context: { params: { id: string } }) {
-  const { id } = context.params;
+export async function PATCH(req: Request, { params }: { params: { id: string } }) {
+  const { id } = params;
   const body = await req.json();
   if (body?.title?.trim()) {
     const index = content.findIndex(item => item.id === +id);
@@ -28,8 +28,8 @@ export async function PATCH(req: NextRequest, context: { params: { id: string } 
   }
 }
 
-export async function DELETE(req: NextRequest, context: { params: { id: string } }) {
-  const { id } = context.params;
+export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+  const { id } = params;
   const index = content.findIndex(item => item.id === +id);
   if (index !== -1) {
     content.splice(index, 1);
