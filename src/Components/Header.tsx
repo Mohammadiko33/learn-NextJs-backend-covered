@@ -39,8 +39,8 @@ const Header = () => {
 
       <div className="flex items-center gap-4">
         <SignedOut>
-          <SignInButton mode="modal"><button className="bg-sky-500">Sign In</button></SignInButton>
-          <SignUpButton mode="modal"><button className="bg-blue-500">Sign up</button></SignUpButton>
+          <SignInButton><button className="bg-sky-500">Sign In</button></SignInButton>
+          <SignUpButton><button className="bg-blue-500">Sign up</button></SignUpButton>
         </SignedOut>
 
         <SignedIn>
