@@ -13,13 +13,7 @@ const Header = () => {
   
   const linkItem: IlinkItem[] = [
     { title: "home", href: "/" },
-    { title: "products db", href: "/products-db" },
-    { title: "products db create", href: "/products-db-create" },
-    { title: "react-form", href: "/react-form" },
     { title: "tesT Req", href: "/testReq" },
-    { title: "user client", href: "/user-client" },
-    { title: "user server", href: "/user-server" },
-    { title: "user parallel", href: `/user-parallel` },
   ];
 
   return (
