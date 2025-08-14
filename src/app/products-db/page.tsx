@@ -2,6 +2,7 @@ import React from "react";
 import { getProducts } from "@/prisma-db";
 import { IProduct } from "@/Components/types";
 import Link from "next/link";
+import { removeProduct } from "@/actions/products";
 
 const Page = async () => {
   const products: IProduct[] = await getProducts();
@@ -18,6 +19,9 @@ const Page = async () => {
           </h2>
           <p className="">{desc}</p>
           <p className="text-lg font-medium">${price}</p>
+          <form action={removeProduct.bind(null , id)}>
+          <button className="bg-red-500 mt-4" type="submit">Delete</button>
+          </form>
         </li>
       ))}
     </ul>
